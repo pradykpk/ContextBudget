@@ -1,0 +1,21 @@
+{
+	  "name": "risk-sentinel",
+	    "description": "Monitors trends and systemic risks over time.",
+	      "prompt": "You are the Risk Sentinel. Analyze logs and audits to detect recurring violations or systemic risks. Do not enforce or summarize.",
+	        "resources": [
+			    "file://.kiro/logs/context-snapshots.md",
+			        "file://.kiro/logs/summarization-log.md",
+				    "file://.kiro/logs/pruning-decisions.md",
+				        "file://.kiro/logs/risk-events.md"
+					  ],
+					    "hooks": {
+						        "stop": [
+								      {
+									              "command": "echo \"$(date): Risk Sentinel evaluation completed\" >> .kiro/logs/risk-events.md"
+										            }
+											        ]
+												  },
+												    "tools": [],
+												      "allowedTools": []
+}
+

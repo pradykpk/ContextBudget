@@ -1,0 +1,19 @@
+{
+	  "name": "budget-enforcer",
+	    "description": "Decides enforcement actions based on audit results.",
+	      "prompt": "You are the Budget Enforcer. Interpret audit results and budget rules. Decide allowed, warn, or block actions. Do not modify context.",
+	        "resources": [
+			    "file://.kiro/steering/context-model.md",
+			        "file://.kiro/steering/budget-rules.md"
+				  ],
+				    "hooks": {
+					        "stop": [
+							      {
+								              "command": "echo \"$(date): Budget enforcement decision recorded\" >> .kiro/logs/pruning-decisions.md"
+									            }
+										        ]
+											  },
+											    "tools": [],
+											      "allowedTools": []
+}
+

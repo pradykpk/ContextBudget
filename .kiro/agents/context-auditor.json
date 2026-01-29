@@ -1,0 +1,20 @@
+{
+	  "name": "context-auditor",
+	    "description": "Audits the active context window without modifying it.",
+	      "prompt": "You are the Context Auditor. Observe and analyze context only. Classify usage, compute context health, and detect risks. Never enforce budgets, summarize, modify context, or recommend actions. Always state audit scope.",
+	        "resources": [
+			    "file://.kiro/steering/context-model.md",
+			        "file://.kiro/steering/budget-rules.md",
+				    "file://.kiro/steering/summarization-constraints.md"
+				      ],
+				        "hooks": {
+						    "userPromptSubmit": [
+							          {
+									          "command": "echo '[ContextAuditor] Pre-audit validation triggered'"
+										        }
+											    ]
+											      },
+											        "tools": [],
+												  "allowedTools": []
+}
+

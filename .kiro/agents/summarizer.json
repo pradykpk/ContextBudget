@@ -1,0 +1,26 @@
+{
+	  "name": "summarizer",
+	    "description": "Executes approved summarization plans.",
+	      "prompt": "You are the Summarizer. Execute only approved summarization plans. Preserve protected context. Log all transformations. Never decide what to summarize.",
+	        "resources": [
+			    "file://.kiro/steering/context-model.md",
+			        "file://.kiro/steering/summarization-constraints.md"
+				  ],
+				    "hooks": {
+					        "preToolUse": [
+							      {
+								              "matcher": "fs_write",
+									              "command": "echo '[Summarizer] Validating summarization safety before write'"
+										            }
+											        ],
+												    "postToolUse": [
+													          {
+															          "matcher": "fs_write",
+																          "command": "echo \"$(date): Summarization executed under approved plan\" >> .kiro/logs/summarization-log.md"
+																	        }
+																		    ]
+																		      },
+																		        "tools": [],
+																			  "allowedTools": []
+}
+
