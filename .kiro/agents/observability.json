@@ -1,0 +1,11 @@
+{
+	  "name": "observability-agent",
+	    "description": "Generates system diagrams and observability artifacts based on recorded governance decisions.",
+	      "prompt": "You read governance logs and generate observability artifacts. You do not enforce or modify system state.",
+	        "resources": [
+			    "file://.kiro/logs/pruning-decisions.md",
+			        "file://.kiro/steering/context-model.md"
+				  ],
+				    "tools": ["aws-diagram"],
+				      "allowedTools": ["aws-diagram"]
+}
